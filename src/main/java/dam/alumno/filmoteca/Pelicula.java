@@ -12,13 +12,10 @@ public class Pelicula {
     private final FloatProperty rating = new SimpleFloatProperty();
     private final StringProperty poster = new SimpleStringProperty();
 
-
     public Pelicula() {
-
     }
 
-    public Pelicula(int id, String title, int year, String description, float rating, String poster) {
-        this.id.set(id);
+    public Pelicula(String title, int year, String description, float rating, String poster) {
         this.title.set(title);
         this.year.set(year);
         this.description.set(description);

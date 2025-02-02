@@ -1,40 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Slider?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dam.alumno.filmoteca.MainController">
-   <children>
-      <TableView fx:id="tablaPeliculas" layoutX="318.0" layoutY="6.0" prefHeight="387.0" prefWidth="274.0">
-        <columns>
-          <TableColumn fx:id="columnaID" prefWidth="44.00004577636719" text="ID" />
-            <TableColumn fx:id="columnaTitulo" prefWidth="177.59991455078125" text="Título" />
-          <TableColumn fx:id="columnaYear" prefWidth="52.7999267578125" text="Año" />
-        </columns>
-      </TableView>
-      <MenuBar layoutY="1.0">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@main-view.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dam.alumno.filmoteca.MainController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
         <menus>
           <Menu mnemonicParsing="false" text="Archivo">
             <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
+              <MenuItem fx:id="menuCerrar" mnemonicParsing="false" onAction="#cerrarApp" text="Cerrar la aplicación" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Acciones">
+          <Menu mnemonicParsing="false" text="Editar (Acciones)">
             <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Ayuda">
-            <items>
-              <MenuItem mnemonicParsing="false" text="About" />
+              <MenuItem fx:id="menuNueva" mnemonicParsing="false" onAction="#nuevaPelicula" text="Incluir una nueva película" />
+                  <MenuItem fx:id="menuEditar" mnemonicParsing="false" onAction="#editarPelicula" text="Editar una película" />
+                  <MenuItem fx:id="menuEliminar" mnemonicParsing="false" onAction="#eliminarPelicula" text="Eliminar una película" />
             </items>
           </Menu>
         </menus>
       </MenuBar>
-   </children>
-</AnchorPane>
+   </top>
+   <center>
+      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <TableView fx:id="tablaPeliculas" prefHeight="570.0" prefWidth="231.0">
+              <columns>
+                <TableColumn fx:id="columnaID" prefWidth="32.00002974271774" text="ID" />
+                <TableColumn fx:id="columnaTitulo" prefWidth="136.80005264282227" text="Título" />
+                  <TableColumn fx:id="columnaYear" prefWidth="56.79998779296875" text="Año" />
+              </columns>
+            </TableView>
+            <AnchorPane prefHeight="570.0" prefWidth="572.0">
+               <children>
+                  <Label alignment="CENTER" layoutX="175.0" layoutY="14.0" prefHeight="30.0" prefWidth="220.0" text="LA FILMOTECA">
+                     <font>
+                        <Font size="24.0" />
+                     </font></Label>
+                  <Label layoutX="17.0" layoutY="54.0" text="ID:" />
+                  <Label layoutX="15.0" layoutY="81.0" text="Título:" />
+                  <Label layoutX="13.0" layoutY="108.0" text="Año de lanzamiento:" />
+                  <Label layoutX="15.0" layoutY="160.0" text="Descripción:" />
+                  <Label layoutX="17.0" layoutY="241.0" text="Nota (1-10):" />
+                  <Text fx:id="textoID" layoutX="42.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="29.599971771240234" />
+                  <Text fx:id="textoTitulo" layoutX="67.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="436.9999542236328" />
+                  <Text fx:id="textoYear" layoutX="161.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="182.6000518798828" />
+                  <TextArea fx:id="textoDescripcion" layoutX="112.0" layoutY="137.0" prefHeight="87.0" prefWidth="410.0" wrapText="true" />
+                  <Slider fx:id="slidePuntuacion" blockIncrement="0.1" layoutX="136.0" layoutY="238.0" max="10.0" prefHeight="42.0" prefWidth="341.0" value="5.0" />
+                  <ImageView fx:id="imagePoster" fitHeight="286.0" fitWidth="175.0" layoutX="197.0" layoutY="270.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+               <HBox.margin>
+                  <Insets left="15.0" />
+               </HBox.margin>
+            </AnchorPane>
+         </children>
+      </HBox>
+   </center>
+</BorderPane>

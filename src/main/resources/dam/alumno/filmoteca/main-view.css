@@ -1,0 +1,79 @@
+.root {
+    -fx-background-color: #f4f4f4;
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-font-size: 14px;
+}
+
+.menu-bar {
+    -fx-background-color: #ecf0f1;
+    -fx-text-fill: #2c3e50;
+}
+
+.menu-bar .menu-item:hover {
+    -fx-background-color: #1abc9c; /*El fondo cambia de color al ponerte encima */
+    -fx-font-weight: bold;
+}
+
+.table-view {
+    -fx-background-color: white;
+    -fx-border-color: #bdc3c7;
+    -fx-border-width: 1px;
+}
+/*Cabecera de la tabla */
+.table-view .column-header {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+/*Para distinguir las celdas pares de las impares. Pongo unas fondo blanco y otras fondo gris*/
+.table-view .table-row-cell {
+    -fx-background-color: white;
+}
+.table-view .table-row-cell:odd {
+    -fx-background-color: #ecf0f1;
+}
+/*Celda seleccionada*/
+.table-view .table-row-cell:selected {
+    -fx-background-color: #1abc9c;
+}
+
+.label {
+    -fx-text-fill: #2c3e50;
+    -fx-font-weight: bold;
+}
+
+.text {
+    -fx-fill: #34495e;
+}
+
+.text-area {
+    -fx-background-color: white;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 5px;
+    -fx-padding: 5px;
+}
+/*Para que no se note el borde del text area pongo el fondo del mismo color*/
+.text-area .content {
+    -fx-background-color: white;
+}
+
+.slider {
+    -fx-control-inner-background: #3498db;
+    -fx-show-tick-labels: true;
+    -fx-show-tick-marks: true;
+}
+/*La bolita del slider*/
+.slider .thumb {
+    -fx-background-color: #1abc9c;
+}
+
+/*El fondo del slider*/
+.slider .track {
+    -fx-background-color: #bdc3c7;
+}
+
+#tituloPrincipal {
+    -fx-font-size: 24px;
+    -fx-text-fill: #3498db;
+    -fx-font-weight: bold;
+}

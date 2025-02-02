@@ -1,0 +1,56 @@
+/*La idea es mantener el mismo estilo que en la ventana principal*/
+.root {
+    -fx-background-color: #f4f4f4;
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-font-size: 14px;
+}
+
+.menu-bar {
+    -fx-background-color: #ecf0f1;
+    -fx-text-fill: #2c3e50;
+}
+
+.menu-bar .menu-item:hover {
+    -fx-background-color: #1abc9c;
+}
+
+.label {
+    -fx-text-fill: #2c3e50;
+    -fx-font-weight: bold;
+}
+
+.text {
+    -fx-fill: #34495e;
+}
+
+.text-area {
+    -fx-background-color: white;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 5px;
+    -fx-padding: 5px;
+}
+
+.text-area .content {
+    -fx-background-color: white;
+}
+
+.slider {
+    -fx-control-inner-background: #3498db;
+    -fx-show-tick-labels: true;
+    -fx-show-tick-marks: true;
+}
+
+.slider .thumb {
+    -fx-background-color: #1abc9c;
+}
+
+.slider .track {
+    -fx-background-color: #bdc3c7;
+}
+
+#tituloVentana {
+    -fx-alignment: center;
+    -fx-font-size: 24px;
+    -fx-text-fill: #3498db;
+    -fx-font-weight: bold;
+}
